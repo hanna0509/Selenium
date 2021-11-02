@@ -124,7 +124,7 @@ public class LocatorsHWTest {
         });
 
         WebElement countOfHealthyProducts = driver.findElement(By.cssSelector("div.product-viewer__viewing>div>b"));
-        Assert.assertEquals(countOfHealthyProducts.getText(), "48 з 71");
+        Assert.assertEquals(countOfHealthyProducts.getText(), "48 з 72");
         driver.close();
     }
 
