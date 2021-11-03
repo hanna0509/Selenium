@@ -27,15 +27,5 @@ public class SelenideTest {
                 .should(Condition.enabled);
         LoginButton.click();
 
-       SelenideElement LoginForm = $(By.id("appContainerDiv"))
-              .should(Condition.exist);
-        $(By.className("position-2-label"))
-                .should(Condition.exist).click();
-
-
-
-
-      //  SelenideElement element = $(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input"));
-      //  var selenideElements = $$("asdasd");
-    }
+          }
 }
