@@ -6,27 +6,23 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class MainPage {
-
+public class MainPage extends BasePage {
+    @FindBy(linkText = "Увійти")
     private WebElement loginButton;
-    private WebDriver driver;
-    private WebDriverWait wait;
+    @FindBy(css = "#amweia-app > div.page > header > div > div > div.site-search > div.site-search-desktop > div > div > form > div > div.search-autocomplete.search-autocomplete--search-btn-right > div > input")
     private WebElement searchField;
+    @FindBy(css = "#amweia-app > div.page > nav > div > div > ul:nth-child(1) > li:nth-child(1) > a")
     private WebElement catalogMenuButton;
+    @FindBy(css = "ul > li a.main-category-link")
     private WebElement healthyOption;
 
-
     public MainPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(this.driver, 5);
-        this.loginButton = driver.findElement(By.linkText("Увійти"));
-        this.searchField = driver.findElement(By.cssSelector("#amweia-app > div.page > header > div > div > div.site-search > div.site-search-desktop > div > div > form > div > div.search-autocomplete.search-autocomplete--search-btn-right > div > input"));
-        this.catalogMenuButton = driver.findElement(By.cssSelector("#amweia-app > div.page > nav > div > div > ul:nth-child(1) > li:nth-child(1) > a"));
-        this.healthyOption = driver.findElement(By.cssSelector("ul > li a.main-category-link"));
+        super(driver);
     }
 
     public void startLogIn() {
@@ -35,7 +31,7 @@ public class MainPage {
         Assertions.assertEquals("Amway - офіційний сайт та інтернет-магазин компанії", pageTitle);
     }
 
-    public void searchField(String searchWord,String searchResult) {
+    public void searchField(String searchWord, String searchResult) {
         searchField.sendKeys(searchWord);
         Assert.assertEquals(driver.findElement(By.className("search-autocomplete-results__title")).getText(), searchResult);
     }
@@ -51,7 +47,8 @@ public class MainPage {
             }
         });
     }
-    public void healthyOption(){
+
+    public void healthyOption() {
         healthyOption.click();
         var healthyPage = new WebDriverWait(driver, 10);
         healthyPage.until(new ExpectedCondition<WebElement>() {
