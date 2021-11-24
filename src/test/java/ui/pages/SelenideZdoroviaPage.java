@@ -1,4 +1,4 @@
-package locators;
+package ui.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class SelenideZdoroviaPage {
     static By countOfHealthyProducts = By.cssSelector("div.product-viewer__viewing>div>b");
     static By cookieMessageClose = By.className("disclaimer__button");
-    static By selectProduct = By.partialLinkText("Набір \"Імунітет\"");
+    static By selectProduct = By.partialLinkText("Базове Тріо з Дейлі");
     static By addToCartButton = By.id("autotest-add-to-cart-button");
     static By cartIconButton = By.className("header__cart-icon");
     static By cartPage = By.cssSelector("h2");

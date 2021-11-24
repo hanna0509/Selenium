@@ -1,4 +1,4 @@
-package locators;
+package ui.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -19,7 +19,7 @@ public class SelenideLoginPage {
 
     public static WebElement logIn(String login, String pass) {
         Configuration.timeout = 200;
-        $(loginTab).should(Condition.visible).click();
+        $(loginTab).should(Condition.visible, Duration.ofSeconds(20)).click();
         $(loginField).should(Condition.visible).sendKeys(login);
         $(passwordField).sendKeys(pass);
         $(submitButton).click();
