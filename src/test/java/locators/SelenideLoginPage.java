@@ -25,6 +25,6 @@ public class SelenideLoginPage {
         $(submitButton).click();
         $(alertMessage).shouldBe(Condition.visible, Duration.ofSeconds(30));
         return
-        $(alertMessage).shouldHave(text("Комбінація вашого Amway ID та паролю не відповідає нашим даним. Будь ласка, спробуйте ще раз."));
+                $(alertMessage).shouldHave(text("Комбінація вашого Amway ID та паролю не відповідає нашим даним. Будь ласка, спробуйте ще раз."));
     }
 }

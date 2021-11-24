@@ -3,13 +3,14 @@ package listeners;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.internal.annotations.ITest;
 
 import java.time.LocalDate;
 
 public class MyTestListener implements ITestListener {
     @Override
-    public void onTestStart(ITestResult result) {
-        System.out.println(result.getName());
+    public void onTestStart(ITestResult description) {
+        System.out.println(description);
         System.out.println("Test started time -> "+ LocalDate.now());
     }
 

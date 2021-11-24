@@ -13,19 +13,19 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class SelenideZdoroviaPage {
     static By countOfHealthyProducts = By.cssSelector("div.product-viewer__viewing>div>b");
-    static  By cookieMessageClose = By.className("disclaimer__button");
-    static  By selectProduct = By.partialLinkText("Набір \"Імунітет\"");
-    static  By addToCartButton = By.id("autotest-add-to-cart-button");
-    static  By cartIconButton = By.className("header__cart-icon");
+    static By cookieMessageClose = By.className("disclaimer__button");
+    static By selectProduct = By.partialLinkText("Набір \"Імунітет\"");
+    static By addToCartButton = By.id("autotest-add-to-cart-button");
+    static By cartIconButton = By.className("header__cart-icon");
     static By cartPage = By.cssSelector("h2");
 
-    public static boolean contOfProducts(String text){
+    public static boolean contOfProducts(String text) {
         Configuration.timeout = 200;
         $(countOfHealthyProducts).should(visible).should(Condition.exactText(text));
         return true;
-      }
+    }
 
-      public  static WebElement addToCart(){
+    public static WebElement addToCart() {
         $(cookieMessageClose).click();
         $(selectProduct).should(enabled).hover().click();
         $(addToCartButton).click();
@@ -33,6 +33,5 @@ public class SelenideZdoroviaPage {
         $(cartIconButton).click();
         return
                 $(cartPage).should(Condition.text("Кошик"), Duration.ofSeconds(10));
-      }
-
+    }
 }
