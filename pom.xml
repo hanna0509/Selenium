@@ -164,10 +164,6 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <suiteXmlFiles>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-                    </suiteXmlFiles>
                     <properties>
                         <property>
                             <name>listener</name>
