@@ -22,7 +22,7 @@ public class CartTest {
         Driver.clearCookies();
     }
 
-    @Test
+    @Test(description = "Test that product is added to the cart and costs as expected")
     public static void addProductToTheCart() {
         open("https://www.amway.ua/zdorovia/c/10003#!filter?page=1");
         SelenideZdoroviaPage.contOfProducts("48 з 72");
