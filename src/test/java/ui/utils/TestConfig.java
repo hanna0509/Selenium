@@ -17,11 +17,4 @@ public class TestConfig {
     public static boolean isHeadless() {
         return headless.contains("1");
     }
-    @Attachment(type = "image/png")
-    public byte[] takeScreenshot(WebDriver driver) {
-        byte[] result = null;
-        if(driver != null) result =
-                ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-        return  result;
-    }
 }

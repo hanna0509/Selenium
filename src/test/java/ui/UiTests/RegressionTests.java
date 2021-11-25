@@ -51,16 +51,4 @@ public class RegressionTests {
         open("https://amway.ua");
         SelenideMainPage.searchFieldTest("Art", "142 знайдених результатів для Art");
     }
-
-
-    @After
-    public void tearDown() throws IOException {
-        screenshot();
-    }
-
-    @Attachment(type = "image/png")
-    public byte[] screenshot() throws IOException {
-        File screenshot = Screenshots.getLastScreenshot();
-        return screenshot == null ? null : Files.toByteArray(screenshot);
-    }
 }
